@@ -1,0 +1,349 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_logo"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/text_hospital_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="   QEE-1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/text_isactive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:text="(Active OR Not)"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black" />
+                
+                <TextView
+                    android:id="@+id/text_qee_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:text="QEE-"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/edit_hospital_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:nextFocusDown="@+id/edit_bag1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
+                    android:visibility="gone" >
+                </EditText>
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp" >
+
+                <TableRow
+                    android:id="@+id/tableRow0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/text_enter_bags"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingLeft="5dp"
+                        android:text="Enter Bags"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/text_enter_kg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingLeft="5dp"
+                        android:text="Enter Kg"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/text_enter_bags_given"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingLeft="10dp"
+                        android:text="Bags Given"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/yellow"
+                    android:gravity="center_vertical"
+                    android:padding="10dp" >
+
+                    <EditText
+                        android:id="@+id/edit_bag1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_bags"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:nextFocusDown="@+id/edit_kg_1"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" />
+
+                    <EditText
+                        android:id="@+id/edit_kg_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_kg"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:nextFocusDown="@+id/edit_bag1_return"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" >
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/edit_bag1_return"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_bags"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:nextFocusDown="@+id/edit_bag3"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue"
+                    android:gravity="center_vertical"
+                    android:padding="10dp" >
+
+                    <EditText
+                        android:id="@+id/edit_bag3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_bags"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:nextFocusDown="@+id/edit_kg_3"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" />
+
+                    <EditText
+                        android:id="@+id/edit_kg_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_kg"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:nextFocusDown="@+id/edit_bag3_return"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" >
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/edit_bag3_return"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_bags"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:nextFocusDown="@+id/edit_bag4"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:padding="10dp" >
+
+                    <EditText
+                        android:id="@+id/edit_bag4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_bags"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:nextFocusDown="@+id/edit_kg_4"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" />
+
+                    <EditText
+                        android:id="@+id/edit_kg_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_kg"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:nextFocusDown="@+id/edit_bag4_return"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" >
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/edit_bag4_return"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_bags"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:nextFocusDown="@+id/edit_bag2"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/red"
+                    android:gravity="center_vertical"
+                    android:padding="10dp" >
+
+                    <EditText
+                        android:id="@+id/edit_bag2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_bags"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:nextFocusDown="@+id/edit_kg_2"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" />
+
+                    <EditText
+                        android:id="@+id/edit_kg_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_kg"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:nextFocusDown="@+id/edit_bag2_return"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" >
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/edit_bag2_return"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="3"
+                        android:background="@color/white"
+                        android:hint="@string/enter_bags"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:nextFocusDown="@+id/btn_camera"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null" />
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/btn_camera"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Camera Image"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Submit"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+START DATE{"data":[{"handsetid":"357197052849802","assignDate":"05\/07\/2017 21:57:30","employeeID":"39","routeID":"30","vehicleRegNo":"1234"}]}
+
+
+{"data":[{"handsetid":"357197052849802","assignDate":"05\/09\/2017 08:28:55","employeeID":"39","routeID":"29","vehicleRegNo":"1234"}]}
+
+SaveDailyAssignmentResponse{SaveDailyAssignmentResult=anyType{respCount=1; isSuccess=true; errorMsg=All Records Saved Successfully; AssignDate=2017-05-09T08:28:55; EndDate=null; ID=5340; }; }
+
+1) super.7995
+2) super.1457
+3) super.2358
+4) super.4779

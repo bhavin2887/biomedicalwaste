@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="red">#FF0000</color>
+    <color name="blue">#0000FF</color>
+    <color name="transparent">#00000000</color>
+    <color name="sl_color_foreground_inverted">#ffffff</color>
+    <color name="sl_color_foreground">#454e56</color>
+    <color name="sl_color_divider">#939393</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="light_sky_blue">#57CDF1</color>
+    <color name="dark_blue_account_text">#0469A4</color>
+    <color name="holo_color">#33B5E5</color>
+	<color name="dark_blue">#0A5098</color>
+	<color name="blue_sky">#7FCDEA</color>
+	<color name="dialog_bg_guesser">#F3F8B6</color>
+	<color name="guess_text">#046889</color>
+	<color name="yellow">#ffff00</color>
+	
+</resources>

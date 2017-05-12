@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">Quantum BMW Collection</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Quantum BMW Collection</string>
+    <string name="employeeid">EmployeeID</string>
+    <string name="vehicleid">VehicleNo</string>
+        <string name="route">Route</string>
+    
+    <string name="enter_your_employee_id">Enter Your Employee ID</string>
+    <string name="enter_your_vehicle_id">Enter Your Vehicle</string>
+    <string name="enter_your_route">Enter Your Route</string>
+    
+    <string name="enter_bags">Bags</string>
+    <string name="enter_kg">Enter KG</string>
+    <string name="yellow_">Yellow \n  પીળો</string>
+	<string name="red_">Red \n  લાલ</string>
+    <string name="blue_">Blue \n  ભૂરો</string>
+    <string name="black_">Black \n  કાળો</string>
+        
+    <string name="yellow_gujarati">પીળો</string>
+</resources>
