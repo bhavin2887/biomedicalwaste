@@ -29,6 +29,10 @@ public final class R {
         public static final int yellow=0x7f05000f;
     }
     public static final class dimen {
+        /**  Default screen margins, per the Android Design guidelines. 
+         */
+        public static final int activity_horizontal_margin=0x7f060003;
+        public static final int activity_vertical_margin=0x7f060004;
         public static final int padding_large=0x7f060002;
         public static final int padding_medium=0x7f060001;
         public static final int padding_small=0x7f060000;
@@ -46,6 +50,7 @@ public final class R {
         public static final int settings=0x7f020009;
     }
     public static final class id {
+        public static final int activity_main=0x7f0a003d;
         public static final int btnHelp=0x7f0a0013;
         public static final int btnSetting=0x7f0a0014;
         public static final int btn_camera=0x7f0a002a;
@@ -53,6 +58,8 @@ public final class R {
         public static final int btn_ok=0x7f0a002b;
         public static final int btn_submit=0x7f0a0032;
         public static final int btn_sync=0x7f0a0037;
+        public static final int choose_from_gallery=0x7f0a003e;
+        public static final int detected_text=0x7f0a0040;
         public static final int edit1=0x7f0a0015;
         public static final int edit_bag1=0x7f0a001a;
         public static final int edit_bag1_return=0x7f0a0020;
@@ -73,7 +80,7 @@ public final class R {
         public static final int home_settings=0x7f0a000d;
         public static final int layout_root=0x7f0a0033;
         public static final int linear_status=0x7f0a0009;
-        public static final int menu_settings=0x7f0a003c;
+        public static final int menu_settings=0x7f0a0041;
         public static final int my_own_image_view=0x7f0a0010;
         public static final int scrollView1=0x7f0a0000;
         public static final int spinner1=0x7f0a0034;
@@ -84,6 +91,7 @@ public final class R {
         public static final int tableRow1=0x7f0a0002;
         public static final int tableRow2=0x7f0a002e;
         public static final int tableRow3=0x7f0a002f;
+        public static final int take_a_photo=0x7f0a003f;
         public static final int textView1=0x7f0a0003;
         public static final int textView2=0x7f0a0001;
         public static final int textView3=0x7f0a000b;
@@ -106,6 +114,7 @@ public final class R {
         public static final int txt_imei=0x7f0a003b;
         public static final int txt_route=0x7f0a003a;
         public static final int txt_veh=0x7f0a0039;
+        public static final int txt_ver=0x7f0a003c;
         public static final int zbar_layout_area=0x7f0a000f;
     }
     public static final class layout {
@@ -117,6 +126,7 @@ public final class R {
         public static final int hospitel_two=0x7f030005;
         public static final int prompt_dialog=0x7f030006;
         public static final int settings=0x7f030007;
+        public static final int testing=0x7f030008;
     }
     public static final class menu {
         public static final int activity_main=0x7f090000;
@@ -126,22 +136,25 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f070000;
-        public static final int black_=0x7f07000f;
-        public static final int blue_=0x7f07000e;
-        public static final int employeeid=0x7f070004;
-        public static final int enter_bags=0x7f07000a;
-        public static final int enter_kg=0x7f07000b;
-        public static final int enter_your_employee_id=0x7f070007;
-        public static final int enter_your_route=0x7f070009;
-        public static final int enter_your_vehicle_id=0x7f070008;
-        public static final int hello_world=0x7f070001;
-        public static final int menu_settings=0x7f070002;
-        public static final int red_=0x7f07000d;
-        public static final int route=0x7f070006;
-        public static final int title_activity_main=0x7f070003;
-        public static final int vehicleid=0x7f070005;
-        public static final int yellow_=0x7f07000c;
-        public static final int yellow_gujarati=0x7f070010;
+        public static final int app_version=0x7f070001;
+        public static final int black_=0x7f070010;
+        public static final int blue_=0x7f07000f;
+        public static final int choose_from_gallery=0x7f070012;
+        public static final int employeeid=0x7f070005;
+        public static final int enter_bags=0x7f07000b;
+        public static final int enter_kg=0x7f07000c;
+        public static final int enter_your_employee_id=0x7f070008;
+        public static final int enter_your_route=0x7f07000a;
+        public static final int enter_your_vehicle_id=0x7f070009;
+        public static final int hello_world=0x7f070002;
+        public static final int menu_settings=0x7f070003;
+        public static final int red_=0x7f07000e;
+        public static final int route=0x7f070007;
+        public static final int take_a_photo=0x7f070013;
+        public static final int title_activity_main=0x7f070004;
+        public static final int vehicleid=0x7f070006;
+        public static final int yellow_=0x7f07000d;
+        public static final int yellow_gujarati=0x7f070011;
     }
     public static final class style {
         public static final int AppTheme=0x7f080000;

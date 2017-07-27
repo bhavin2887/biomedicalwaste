@@ -13,7 +13,9 @@ public class WebService {
 	
 	private static final String NAMESPACE="http://tempuri.org/";
 	
-	private static final String URL="http://quantumenvironment.in/StorageWebService.asmx";
+	private static final String URL="http://60.254.38.13:8080/StorageWebService.asmx";
+	
+	//private static final String URL="http://quantumenvironment.in/StorageWebService.asmx";
 	//private static final String URL="http://quantum.mtajsolutions.com/storagewebservice.asmx";
 	
 	public static class webService_GuesserAskForHint{

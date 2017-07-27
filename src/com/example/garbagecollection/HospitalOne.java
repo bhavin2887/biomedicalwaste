@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -16,7 +17,6 @@ import org.ksoap2.serialization.SoapObject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
@@ -27,6 +27,11 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.Typeface;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
@@ -41,7 +46,6 @@ import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -494,26 +498,26 @@ public class HospitalOne extends Activity{
 		
 		manager = (LocationManager)getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
 		isGPS = manager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-				  // create class object
-                gps = new GPSTracker(getApplicationContext());
+		// create class object
+        gps = new GPSTracker(getApplicationContext());
 
+        // check if GPS enabled
+        if(gps.canGetLocation()){
+        	lat = gps.getLatitude();
+            lon = gps.getLongitude();
+            if(lat == 0){
+            	gps = new GPSTracker(getApplicationContext());
                 // check if GPS enabled
                 if(gps.canGetLocation()){
                 	lat = gps.getLatitude();
                     lon = gps.getLongitude();
-                    if(lat == 0){
-                    	gps = new GPSTracker(getApplicationContext());
-                        // check if GPS enabled
-                        if(gps.canGetLocation()){
-                        	lat = gps.getLatitude();
-                            lon = gps.getLongitude();
-                        }
-                    }
-                    Toast.makeText(getApplicationContext(), "Lat "+ lat + "Lon "+lon, Toast.LENGTH_LONG).show();
-                }else{
-                    // can't get location GPS or Network is not enabled Ask user to enable GPS/network in settings
-                    //gps.showSettingsAlert(this);
                 }
+            }
+            Toast.makeText(getApplicationContext(), "Lat "+ lat + "Lon "+lon, Toast.LENGTH_LONG).show();
+        }else{
+            // can't get location GPS or Network is not enabled Ask user to enable GPS/network in settings
+            //gps.showSettingsAlert(this);
+        }
 	}
 	
 	private class WebserviceCheckHospital extends AsyncTask<String, String, SoapObject> {
@@ -823,10 +827,39 @@ public class HospitalOne extends Activity{
 			if(resultCode != 0)
 			{
 				if (data == null) {
+					
+
 					camera_flag = true;
 					File fileObject = new File(HomeActivity.path.toString()+"/DP.png");
 					bitm = decodeFile(fileObject);
-					valBase64 = getBase64Value(bitm);
+					Bitmap workingBitmap = Bitmap.createBitmap(bitm);
+					Bitmap mutableBitmap = workingBitmap.copy(Bitmap.Config.ARGB_8888, true);
+					
+					  try {
+					        FileOutputStream out = new FileOutputStream(HomeActivity.path.toString()+"/DP1.png");
+
+					        // NEWLY ADDED CODE STARTS HERE [
+							Canvas canvas = new Canvas(mutableBitmap);
+
+				            Paint paint = new Paint();
+				            paint.setColor(Color.RED); // Text Color
+				            paint.setStrokeWidth(45); // Text Size
+				            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER)); // Text Overlapping Pattern
+				            // some more settings...
+
+				            canvas.drawBitmap(mutableBitmap, 0, 0, paint);
+							SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+							String currentDateandTime = sdf.format(new Date());
+							canvas.drawText(currentDateandTime , 10, 25, paint);
+				            
+							mutableBitmap.compress(Bitmap.CompressFormat.JPEG, 80, out);
+							
+					        out.flush();
+					        out.close();
+					    } catch (Exception e) {
+					       e.printStackTrace();
+					    }
+					valBase64 = getBase64Value(mutableBitmap);
 				}
 			}
 		}

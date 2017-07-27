@@ -180,6 +180,8 @@
                     android:text="Sync Start Date"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </LinearLayout>
+
+
         </LinearLayout>
     </ScrollView>
 
