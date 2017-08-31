@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">Quantum BMW Collection</string>
-    <string name="app_version">V2.1 (09 July 2017)</string>
+    <string name="app_version">V2.3 (31 Aug 2017)</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Quantum BMW Collection</string>

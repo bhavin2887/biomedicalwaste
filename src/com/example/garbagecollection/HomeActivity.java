@@ -677,6 +677,77 @@ public class HomeActivity extends Activity {
 		  }
 		 }
 	
+	private class WebserviceStartEndCaller extends AsyncTask<String, String, SoapObject> {
+
+		  SoapObject soap;
+		  private ProgressDialog dialog;
+
+		  @Override
+		  protected SoapObject doInBackground(String... params) {
+		   publishProgress("Sleeping..."); // Calls onProgressUpdate()
+		   try {   				
+			   
+			   SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+       		   String getDateTime= sdf.format(new Date());
+       			
+			   final JSONArray jObjectOptionData2 = new JSONArray();
+		   
+			   JSONObject dataLoop = new JSONObject();
+				 dataLoop.put("QEEID", "2");
+				 dataLoop.put("strQEEID",  "QEE-2");
+				 dataLoop.put("blueKg", "0");
+				 dataLoop.put("yellowKg", "0");
+				 dataLoop.put("blackKg", "0");
+				 dataLoop.put("redKg", "0");
+				 dataLoop.put("totalKg", "0");
+				 dataLoop.put("blueBagsGiven", "0");
+				 dataLoop.put("yellowBagsGiven", "0");
+				 dataLoop.put("redBagsGiven", "0");
+				 dataLoop.put("blackBagsGiven", "0");
+				 dataLoop.put("transDateTime", getDateTime);
+				 dataLoop.put("vehicleID", str_veh);
+				 dataLoop.put("employeeID", str_emp);
+				 dataLoop.put("routeID", str_rou);
+				 dataLoop.put("strImage", "0");
+				 dataLoop.put("yellowBagsCollected", "0");
+				 dataLoop.put("redBagsCollected", "0");
+				 dataLoop.put("blueBagsCollected", "0");
+				 dataLoop.put("blackBagsCollected", "0");
+				 dataLoop.put("lat", "22.280347");
+				 dataLoop.put("lon", "73.167942");
+				 dataLoop.put("ishospitalopen", "Open");
+
+				 jObjectOptionData2.put(dataLoop);
+				 
+				 String set_data = "{\"data\":"+jObjectOptionData2.toString()+"}";
+				 
+				 Log.i("Request", "Request STARTEND=== "+set_data);
+			 soap = WebService.webService_GuesserAskForHint.callWebservice(getApplicationContext(), set_data);
+		   } catch (Exception e) {
+			   e.printStackTrace();
+		   }
+		   return soap;
+		  }
+		  
+		  @Override
+		  protected void onPostExecute(SoapObject soapObject) {
+			  Log.i("Request", "Request PostExecute=== ");
+
+			  if (dialog.isShowing()) {
+		            dialog.dismiss();
+		      }
+			  
+		  }
+
+		  @Override
+		  protected void onPreExecute() {
+		   // Things to be done before execution of long running operation. For
+		   // example showing ProgessDialog
+			  dialog = new ProgressDialog(HomeActivity.this);
+			  dialog.setMessage("Please wait...");
+		      dialog.show();
+		  }
+		 }
 	
 	private class WebserviceCheck extends AsyncTask<String, String, String> {
 
@@ -866,6 +937,9 @@ public class HomeActivity extends Activity {
 				    	text_vehicle_no.setText("");
 				    	text_route.setText("");
 				  }
+				  //Log.i("=====","===== WebserviceStartEndCaller");
+				  
+				  //new WebserviceStartEndCaller().execute();
 			  }else{
 				  Toast.makeText(HomeActivity.this, "Problem with starting date" ,Toast.LENGTH_SHORT).show();
 			  }
